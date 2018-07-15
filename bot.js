@@ -501,11 +501,4 @@ LOka.on('guildMemberAdd', member => {
             }
        
     });
- 
-   
- 
- 
- 
- 
-LOka.login("NDY3MzQxMjcxODAzODg3NjE2.DizVNA.mkf7YJgVB30cMq5zW7DREee0o_Q")
 client.login(process.env.BOT_TOKEN);
