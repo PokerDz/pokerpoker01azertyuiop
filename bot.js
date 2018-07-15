@@ -46,7 +46,7 @@ console.log(`Logged in as  * [ "  PokerDz-YT " ] servers! [ " ${LOka.guilds.size
    
  
 });
-var prefix = "-"
+
 LOka.on("message", message => {
   if(!message.content.startsWith(prefix)) return;;
   let args = message.content.split(" ").slice(1);
