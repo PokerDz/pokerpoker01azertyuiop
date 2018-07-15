@@ -30,7 +30,7 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
 
 
 console.log('By PokerDz-YT');
-LOka.on('ready', () => {
+
   console.log(`Logged in as ${LOka.user.tag} !`);
  
 });
