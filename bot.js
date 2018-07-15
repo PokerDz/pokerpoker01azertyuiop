@@ -27,7 +27,8 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
-const LOka = new Discord.Client();
+
+
 console.log('By PokerDz-YT');
 LOka.on('ready', () => {
   console.log(`Logged in as ${LOka.user.tag} !`);
