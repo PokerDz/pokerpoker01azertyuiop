@@ -50,7 +50,7 @@ message.channel.sendMessage('**الرجاء الانتظار ريث ما يتم 
 }
 });
 client.on('ready', () => {
-  client.user.setGame('*help | *invite','https://www.twitch.tv/peery13');
+  client.user.setGame('SR!help | SR!invite','https://www.twitch.tv/peery13');
   console.log('---------------');
   console.log(' Bot Is Online')
   console.log('---------------')
