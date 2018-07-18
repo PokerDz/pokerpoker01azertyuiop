@@ -33,8 +33,7 @@ client.on('message' , message => {
      const embed = new Discord.RichEmbed()
  .setColor("RANDOM")
  .setThumbnail(client.user.avatarURL)     
- .setDescription(** الرد **
-`);
+ .setDescription(** الرد **`);
   message.author.sendEmbed(embed);
    }
 });
