@@ -27,5 +27,15 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
+client.on('message' , message => {
 
+    if (message.content === "باك") {
+     const embed = new Discord.RichEmbed()
+ .setColor("RANDOM")
+ .setThumbnail(client.user.avatarURL)     
+ .setDescription(** ولكم منور **
+`);
+  message.author.sendEmbed(embed);
+   }
+});
 client.login(process.env.BOT_TOKEN);
