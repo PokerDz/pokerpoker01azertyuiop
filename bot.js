@@ -29,11 +29,11 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
 });
 client.on('message' , message => {
 
-    if (message.content === "باك") {
+    if (message.content === "الكلمة") {
      const embed = new Discord.RichEmbed()
  .setColor("RANDOM")
  .setThumbnail(client.user.avatarURL)     
- .setDescription(** ولكم منور **
+ .setDescription(** الرد **
 `);
   message.author.sendEmbed(embed);
    }
