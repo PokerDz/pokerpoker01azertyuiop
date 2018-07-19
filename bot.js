@@ -54,8 +54,10 @@ client.on('ready', () => {
   console.log('---------------');
   console.log(' Bot Is Online')
   console.log('---------------')
-});console prefix = " SR! "
-	
+console prefix = " SR! "
+
+}):
+
 client.on('message', message => {
         if (message.content.startsWith(prefix + "uptime")) {
     let ms = client.uptime;
