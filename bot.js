@@ -27,6 +27,33 @@ client.user.setGame(`SR Server`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
+client.on('message', message => {
+    if (message.content === "sr!server") {
+        if (!message.channel.guild) return;
+        const millis = new Date().getTime() - message.guild.createdAt.getTime();
+        const now = new Date();
+
+
+        const days = millis / 1000 / 60 / 60 / 24;
+        let roles = client.guilds.get(message.guild.id).roles.map(r => r.name);
+        var embed = new Discord.RichEmbed()
+            .setAuthor(message.guild.name, message.guild.iconURL)
+            .addField("**Server ID | ايـدي الـسيرفر 🆔**", "**" + message.guild.id + "**", true)
+            .addField("**Server Owner | اونر السيـرفر 👑** ", "**" + message.guild.owner + "**", true)
+            .addField("**Server Location | مـنـطـقـة الـسـيرفـر 🔧**", "**" + message.guild.region + "**", true)
+            .addField('**Server Text Channels | رومـات السـيرفر الصـوتـية 🎤**', `**[ ${message.guild.channels.filter(m => m.type === 'text').size} ] Channel **`, true)
+            .addField("**Server Voice Channels | رومـات الـسيرفرالكـتابـية 📝**", ` ** [ ${message.guild.channels.filter(m => m.type === 'voice').size} ] Channel ** `, true)
+            .addField("**Date created | تـاريخ صـناعـه السـيرفـر 📅**", ` ** [ ${days.toFixed(0)} ] ** Day `, true)
+            .addField("**Roles | الـرتب ✨**", `**[${message.guild.roles.size}]** Role `, true)
+
+        .addField("Members", `
+**${message.guild.memberCount}**`)
+            .setThumbnail(message.guild.iconURL)
+            .setColor('RANDOM')
+        message.channel.sendEmbed(embed)
+
+    }
+});
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
   return channel.send(`:rose:  ولكم نورت السيرفر:rose: 
