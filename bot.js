@@ -54,7 +54,7 @@ client.on('ready', () => {
   console.log('---------------');
   console.log(' Bot Is Online')
   console.log('---------------')
-});
+});Var prefix = " SR! "
 	
 client.on('message', message => {
         if (message.content.startsWith(prefix + "uptime")) {
