@@ -49,8 +49,6 @@ client.on('message', message => {
 message.channel.sendMessage('**الرجاء الانتظار ريث ما يتم صناعه الرتب **')
 }
 });
-const Discord = require('discord.js');
-const client = new Discord.Client();
 client.on('ready', () => {
   client.user.setGame('SR!help | SR!invite','https://www.twitch.tv/peery13');
   console.log('---------------');
