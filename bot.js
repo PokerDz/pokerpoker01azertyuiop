@@ -636,7 +636,7 @@ client.on('guildCreate', guild => {
 
 client.on('message', message => {
     var prefix = "SR!"
-    if (message.content === SR! + "date") {
+    if (message.content === prefix + "date") {
         var currentTime = new Date(),
             السنة = currentTime.getFullYear(),
             الشهر = currentTime.getMonth() + 1,
