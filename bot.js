@@ -49,16 +49,17 @@ client.on('message', message => {
 message.channel.sendMessage('**الرجاء الانتظار ريث ما يتم صناعه الرتب **')
 }
 });
+const Discord = require('discord.js');
+const client = new Discord.Client();
 client.on('ready', () => {
   client.user.setGame('SR!help | SR!invite','https://www.twitch.tv/peery13');
   console.log('---------------');
   console.log(' Bot Is Online')
   console.log('---------------')
-
-
-client.on('message', message => {
+});
 	
-if (message.content.startsWith(prefix + "uptime")) {
+client.on('message', message => {
+        if (message.content.startsWith(SR! + "uptime")) {
     let ms = client.uptime;
     let cd = 24 * 60 * 60 * 1000; // Calc days
     let ch = 60 * 60 * 1000; // Calc hours
@@ -126,7 +127,7 @@ if (message.content.startsWith(prefix + "uptime")) {
 
 client.on('message', message => {
   
-if (message.content.startsWith(prefix + 'perm')) {
+if (message.content.startsWith(SR! + 'perm')) {
          if(!message.channel.guild) return;
          var perms = JSON.stringify(message.channel.permissionsFor(message.author).serialize(), null, 4);
          var zPeRms = new Discord.RichEmbed()
@@ -140,7 +141,7 @@ if (message.content.startsWith(prefix + 'perm')) {
 
 
 client.on('message', function(message) {
-    if(message.content.startsWith(prefix + 'roll')) {
+    if(message.content.startsWith(SR! + 'roll')) {
         let args = message.content.split(" ").slice(1);
         if (!args[0]) {
             message.channel.send('**حط رقم معين يتم السحب منه**');
@@ -157,7 +158,7 @@ client.on('message', function(message) {
 	
 client.on('message', message => {
     if (message.author.Bot) return;
-     if (message.content === prefix + "help-en") {
+     if (message.content === SR! + "help-en") {
 		 message.channel.send('**The Message Was Sent On Private**');
             
 	
@@ -249,7 +250,7 @@ Bot invite link: https://discordapp.com/api/oauth2/authorize?client_id=467341271
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "help-ar") {
+     if (message.content === SR! + "help-ar") {
 		 message.channel.send('**تم ارسالك في الخاص**');
             
 	
@@ -337,7 +338,7 @@ bot invite link: https://discordapp.com/api/oauth2/authorize?client_id=467341271
 });
 
 client.on('message', message => {
-    if (message.content.startsWith(prefix + "invs")) {
+    if (message.content.startsWith(SR! + "invs")) {
      if(!message.channel.guild) return;
 if (message.author.bot) return;
         message.channel.createInvite({
@@ -362,7 +363,7 @@ if (message.author.bot) return;
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "own") {
+     if (message.content === SR! + "own") {
 
 
  message.author.sendMessage(`
@@ -384,7 +385,7 @@ message.channel.send('**تم الارسال في الخاص**');
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "invite") {
+     if (message.content === SR! + "invite") {
 
 
  message.author.sendMessage(`
@@ -405,7 +406,7 @@ message.channel.send('**تم الارسال في الخاص**');
 
 
 client.on('message', function(msg) {
-    if(msg.content.startsWith (prefix  + 'server')) {
+    if(msg.content.startsWith (SR!  + 'server')) {
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
       .setThumbnail(msg.guild.iconURL)
@@ -460,7 +461,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-  var prefix = "*";
+  var prefix = "SR!";
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -607,9 +608,9 @@ client.on('message', message => {
 
 client.on('message', message => {
     if (message.author.bot) return;
-     if (message.content === prefix + "help") {
+     if (message.content === SR! + "help") {
 	    
-                        message.channel.send('**Choose**: *help-ar ➾ arabic | *help-en ➾ english');
+                        message.channel.send('**Choose**: SR!help-ar ➾ arabic | SR!help-en ➾ english');
 
     }
 });
@@ -636,8 +637,8 @@ client.on('guildCreate', guild => {
 });
 
 client.on('message', message => {
-    var prefix = "*"
-    if (message.content === prefix + "date") {
+    var prefix = "SR!"
+    if (message.content === SR! + "date") {
         var currentTime = new Date(),
             السنة = currentTime.getFullYear(),
             الشهر = currentTime.getMonth() + 1,
@@ -648,7 +649,7 @@ client.on('message', message => {
 
   
 client.on("message", (message) => {
-if (message.content.startsWith("*ct")) {
+if (message.content.startsWith("SR!ct")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'text');
@@ -659,7 +660,7 @@ message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
 
 
 client.on("message", (message) => {
-if (message.content.startsWith("*cv")) {
+if (message.content.startsWith("SR!cv")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
         let args = message.content.split(" ").slice(1);
     message.guild.createChannel(args.join(' '), 'voice');
@@ -670,7 +671,7 @@ if (message.content.startsWith("*cv")) {
 
       client.on('message', message => {
                                 if(!message.channel.guild) return;
-                        if (message.content.startsWith('*ping')) {
+                        if (message.content.startsWith('SR!ping')) {
                             if(!message.channel.guild) return;
                             var msg = `${Date.now() - message.createdTimestamp}`
                             var api = `${Math.round(client.ping)}`
@@ -685,7 +686,7 @@ if (message.content.startsWith("*cv")) {
                     });
 
 client.on('message', message => {
-    if (message.content.startsWith("*avatar")) {
+    if (message.content.startsWith("SR!avatar")) {
         var mentionned = message.mentions.users.first();
     var x5bzm;
       if(mentionned){
@@ -732,7 +733,7 @@ channel.send({embed : embed});
 });
 
 client.on("message", msg => {
-  if(msg.content === '*' + "id") {
+  if(msg.content === 'SR!' + "id") {
       const embed = new Discord.RichEmbed();
   embed.addField(":trident:|Username", `${msg.author.username}#${msg.author.discriminator}`, true)
           .addField(":id:|iD", `${msg.author.id}`, true)
