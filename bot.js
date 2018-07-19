@@ -4,7 +4,7 @@ const prefix = '.'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
+client.user.setGame(`SR Server`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -27,6 +27,13 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`:rose:  ولكم نورت السيرفر:rose: 
+:crown:اسم العضو  ${member}:crown:  
+انت العضو رقم ${member.guild.memberCount} `) 
+}).catch(console.error)
+})
 client.on('message', message => {
     
    if(message.member.hasPermission('MANAGE_ROLES')) 
@@ -127,32 +134,59 @@ client.on('message', msg => {
     msg.reply('الرجاء التأكد من اعطاء البوت خاصية الـ(MANAGE_CHANNELS و MANAGE_ROLES) ');
   }
 });
- '* من تحب اكثر امك او ابك*', 
-'* من تحب اكثر الوجبات سريعة ولا وبجات في بيت *', 
-'من تحب اكثر اخيك ولا اختك.',
- ' متحب اكثر النوم ولا  السهر.', 
-'من تحب اكثر هاتف فقدانت تمتلكه في عالم اوتلفاز ضخم. ' , 
-'من تحب اكثر ميدنتك او اليابان',
- ' من تحب اكثر ابيك يضربك كف قوي ولا شخص غريب يضربك كف قوي.', 
-'من تحب اكثر جدك او نانتك. ', 
-'من تحب اكثر كرة سلة او كرة قدم ',
- 'من تحب اكثر تشحن هاتفك كل ثلاث ايام ولا' ,  'بدون انترنت لمدة ثلاث ايام.', ' من تحب اكثر تبرمج العاب ولا تبرمج مواقع', 
-' من تحب اكثر تشتهر بواسطة سوشيال ميديا ولا تشتهر بفضل لعبة البولينغ.*',
- ' من تحب اكثر تكون ممثل وانت بطل قصة وفلوس قليلة ولا تكون الشخصية شريرة بس فلوس كثيرة.',
- '*من تحب اكثر كريستيانو ولا ميسي. *',
- '*من تحب اكثر النوم او تشتغل في الليل والنهار وتربح كثير فلوس.*', 
-'* من تحب اكثر يكون عندك اصدقاء في طفولى وماعندك اصدقاء لمه تكبر او العكس. *', 
-'*  من تحب اكثر تولد بدون يكون عندك فقد يد وحدة ولا تولد عندك رجل وحدة فقد.*', 
-'*من تحب اكثر يكون عمبرك قليل والكل يحبك او عمرك طويل جدا والكل يكرهك. *', 
-'*من تحب اكثر تعيش في اسوأ مكان في عالم وامك موجودة معك ولا تعيش افضل بلد معك بس امك ميتة. *' 
-
 client.on('message', message => {
- var prefix = 'sr!'; 
-if (message.content.startsWith(prefix + 'من تحب اكثر')){ 
-var mariam= new Discord.RichEmbed() 
-.setTitle("لعبة من تحب اكثر ..")
- .setColor('RANDOM') 
-.channel.sendEmbed(mariam); message.react("🤔")
- }
- });
+              if (!message.channel.guild) return;
+      if(message.content =='sr!member')
+      var IzRo = new Discord.RichEmbed()
+      .setThumbnail(message.author.avatarURL)
+      .setFooter(message.author.username, message.author.avatarURL)
+      .setTitle(':tulip:| Members info')
+      .addBlankField(true)
+      .addField('عدد اعضاء السيرفر',`${message.guild.memberCount}`)
+      message.channel.send(IzRo);
+
+    });
+client.on('message', msg => {
+  if(msg.content === 'sr!show all channels ') {
+    msg.guild.channels.forEach(c => {
+      c.overwritePermissions(msg.guild.id, {
+        SEND_MESSAGES: true,
+        READ_MESSAGES: true
+
+    msg.channel.send('**تم اظهار جميع الرومات**')
+  }
+})
+client.on('message', msg => {
+  if(msg.content === 'sr!hide all channels ') {
+    msg.guild.channels.forEach(c => {
+      c.overwritePermissions(msg.guild.id, {
+        SEND_MESSAGES: false,
+        READ_MESSAGES: false
+
+    msg.channel.send('**تم اخفاء جميع الرومات**)
+  }
+})
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('https://')){
+        message.delete()
+    return message.reply(`**حبي ممنوع نشر اي روابط:joy: **`)
+    }
+});
+client.on('message', message => {
+    if (message.content.startsWith("sr!avatar")) {
+        var mentionned = message.mentions.users.first();
+    var x5bzm;
+      if(mentionned){
+          var x5bzm = mentionned;
+      } else {
+          var Hamada = message.author;
+          
+      }
+        const embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setImage(`${Hamada.avatarURL}`)
+      message.channel.sendEmbed(embed);
+    }
+});	    
 client.login(process.env.BOT_TOKEN);
