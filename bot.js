@@ -146,33 +146,6 @@ client.on('message', message => {
       message.channel.send(IzRo);
 
     });
-client.on('message', msg => {
-  if(msg.content === 'sr!show all channels ') {
-    msg.guild.channels.forEach(c => {
-      c.overwritePermissions(msg.guild.id, {
-        SEND_MESSAGES: true,
-        READ_MESSAGES: true
-
-    msg.channel.send('**تم اظهار جميع الرومات**')
-  }
-})
-client.on('message', msg => {
-  if(msg.content === 'sr!hide all channels ') {
-    msg.guild.channels.forEach(c => {
-      c.overwritePermissions(msg.guild.id, {
-        SEND_MESSAGES: false,
-        READ_MESSAGES: false
-
-    msg.channel.send('**تم اخفاء جميع الرومات**)
-  }
-})
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('https://')){
-        message.delete()
-    return message.reply(`**حبي ممنوع نشر اي روابط:joy: **`)
-    }
-});
 client.on('message', message => {
     if (message.content.startsWith("sr!avatar")) {
         var mentionned = message.mentions.users.first();
