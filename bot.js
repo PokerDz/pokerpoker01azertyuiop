@@ -56,7 +56,7 @@ client.on('ready', () => {
   console.log('---------------')
 
 
-client.on('message', message => {client.prefix = "SR! "
+client.on('message', message => {
 	
 if (message.content.startsWith(prefix + "uptime")) {
     let ms = client.uptime;
