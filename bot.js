@@ -49,7 +49,7 @@ client.on("message", message => {
              
      if(!message.channel.guild) return;
 
- if (message.content === "Shelp") {
+ if (message.content === "SR!help") {
    message.react("😜")
   const embed = new Discord.RichEmbed()
       .setColor("RANDOM")
