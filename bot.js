@@ -237,5 +237,126 @@ client.on('message', message => {
         .setImage(`${Hamada.avatarURL}`)
       message.channel.sendEmbed(embed);
     }
-});	    
+});
+client.on('message', message => {
+   if (message.content.startsWith("sr!id")) {
+                if(!message.channel.guild) return message.reply('**هذا الامر فقط في السيرفرات وشكرا**');
+
+               var mentionned = message.mentions.users.first();
+    var mentionavatar;
+      if(mentionned){
+          var mentionavatar = mentionned;
+      } else {
+          var mentionavatar = message.author;
+          
+      }
+   let embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+   .setThumbnail(`${mentionavatar.avatarURL}`)
+  .addField("الاسم:",`<@` + `${mentionavatar.id}` + `>`, true)
+  .addField('التاق:',"#" +  `${mentionavatar.discriminator}`, true)
+   .addField("الايدي:", "**[" + `${mentionavatar.id}` + "]**", true)
+  .addField("تم الانشاء في:", "**[" + `${mentionavatar.createdAt}` + "]**", true)
+     
+     
+  message.channel.sendEmbed(embed);
+  console.log('[id] Send By: ' + message.author.username)
+    }
+});
+client.on('message', message => {
+     if(!message.channel.guild) return;
+var prefix = "sr!";
+                if(message.content.startsWith(prefix + 'allbots')) {
+
+    
+    if (message.author.bot) return;
+    let i = 1;
+        const botssize = message.guild.members.filter(m=>m.user.bot).map(m=>`${i++} - <@${m.id}>`);
+          const embed = new Discord.RichEmbed()
+          .setAuthor(message.author.tag, message.author.avatarURL)
+          .setDescription(`**Found ${message.guild.members.filter(m=>m.user.bot).size} bots in this Server**
+${botssize.join('\n')}`)
+.setFooter(client.user.username, client.user.avatarURL)
+.setTimestamp();
+message.channel.send(embed)
+
+}
+
+
+});
+client.on("message", message => {
+    var prefix = "sr!";
+ 
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix + "clear")) {
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **لا يوجد لديك صلاحية لمسح الشات**');
+        var msg;
+        msg = parseInt();
+      
+      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+      message.channel.sendMessage("", {embed: {
+        title: "Done | تــم مسح الشات",
+        color: 0x06DF00,
+        description: "تم مسح الرسائل ",
+        footer: {
+          text: "©zabhm"
+        }
+      }}).then(msg => {msg.delete(3000)});
+                          }
+
+     
+}); 
+ const dot = new Discord.Client();
+client.on('message', message => {
+    
+    if (message.content === "sr!emoji") {
+        setInterval(function(){
+        message.edit('😂') 
+        message.edit('🙉')   
+        message.edit('🔥')
+        message.edit('😠')
+        message.edit('🔥 🌶')
+        message.edit('🙃')
+        message.edit('☠')
+        message.edit('✨')
+        message.edit('😐')
+        message.edit('😍')
+        message.edit('❤')
+        message.edit('👌:skin-tone-2:')
+        message.edit('🌚')
+        message.edit('🌹')
+        message.edit('😒')
+        message.edit('🐸')
+        message.edit('🍉')
+        message.edit('🚨')
+        message.edit('😱')
+        message.edit('😡')        
+        message.edit('🤑')
+        message.edit('😖')
+        message.edit('😚')
+        message.edit('🕊')
+        message.edit('☄')
+           message.edit('🐶')
+        message.edit('🚜')    
+        message.edit('🍫')
+        message.edit('👇:skin-tone-2:')
+        message.edit('🕹')
+        message.edit('🌌 ')
+        message.edit('💋 ')
+           message.edit('🤸')
+        message.edit('🙍:skin-tone-2:')    
+        message.edit('😦')
+        message.edit('👈:skin-tone-2:')
+        message.edit('💓')
+        message.edit('☺')
+        message.edit('💗')
+        message.edit('🌸')
+
+
+        
+        
+        }, 1000)
+    }
+    
+})
 client.login(process.env.BOT_TOKEN);
