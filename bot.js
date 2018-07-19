@@ -27,6 +27,18 @@ client.user.setGame(`SR Server`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
+
+client.on('message', message => {
+if (message.content.startsWith("sr!kick")) {
+    var mention = message.mentions.member.first();
+    if(!mention) return message.channel.send("u want to ping who u want to kick");
+
+    mention.kick("By: " + message.author.tag);
+    
+    message.channel.send("got kicked : " + mention.tag);
+};
+});
+
 client.on('message', message => {
     if (message.content === "sr!server") {
         if (!message.channel.guild) return;
