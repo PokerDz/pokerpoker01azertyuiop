@@ -54,12 +54,11 @@ client.on('ready', () => {
   console.log('---------------');
   console.log(' Bot Is Online')
   console.log('---------------')
-console prefix = " SR! "
 
-}):
 
-client.on('message', message => {
-        if (message.content.startsWith(prefix + "uptime")) {
+client.on('message', message => {client.prefix = "SR! "
+	
+if (message.content.startsWith(prefix + "uptime")) {
     let ms = client.uptime;
     let cd = 24 * 60 * 60 * 1000; // Calc days
     let ch = 60 * 60 * 1000; // Calc hours
