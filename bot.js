@@ -153,7 +153,6 @@ if (message.content.startsWith(prefix + 'من تحب اكثر')){
 var mariam= new Discord.RichEmbed() 
 .setTitle("لعبة من تحب اكثر ..")
  .setColor('RANDOM') 
- random() * kingmas.length)]}`)
 .channel.sendEmbed(mariam); message.react("🤔")
  }
  });
