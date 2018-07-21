@@ -29,7 +29,7 @@ client.user.setGame(`Bot By Poker`,"http://twitch.tv/S-F")
 });
 client.on('message', message => {
               if(!message.channel.guild) return;
-    if(message.content.startsWith('sr!bc')) {
+    if(message.content.startsWith('kd-bc')) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
@@ -66,7 +66,7 @@ client.on('message', message => {
     }
     })
 client.on('message', message => {
-if (message.content.startsWith("sr!kick")) {
+if (message.content.startsWith("kd-kick")) {
     var mention = message.mentions.member.first();
     if(!mention) return message.channel.send("u want to ping who u want to kick");
 
@@ -77,7 +77,7 @@ if (message.content.startsWith("sr!kick")) {
 });
 
 client.on('message', message => {
-    if (message.content === "sr!server") {
+    if (message.content === " kd-server") {
         if (!message.channel.guild) return;
         const millis = new Date().getTime() - message.guild.createdAt.getTime();
         const now = new Date();
@@ -212,7 +212,7 @@ client.on('message', msg => {
 });
 client.on('message', message => {
               if (!message.channel.guild) return;
-      if(message.content =='sr!member')
+      if(message.content =='kd-member')
       var IzRo = new Discord.RichEmbed()
       .setThumbnail(message.author.avatarURL)
       .setFooter(message.author.username, message.author.avatarURL)
@@ -223,7 +223,7 @@ client.on('message', message => {
 
     });
 client.on('message', message => {
-    if (message.content.startsWith("sr!avatar")) {
+    if (message.content.startsWith("kd-avatar")) {
         var mentionned = message.mentions.users.first();
     var x5bzm;
       if(mentionned){
@@ -239,7 +239,7 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
-   if (message.content.startsWith("sr!id")) {
+   if (message.content.startsWith("kd-id")) {
                 if(!message.channel.guild) return message.reply('**هذا الامر فقط في السيرفرات وشكرا**');
 
                var mentionned = message.mentions.users.first();
@@ -265,7 +265,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
      if(!message.channel.guild) return;
-var prefix = "sr!";
+var prefix = "kd-";
                 if(message.content.startsWith(prefix + 'allbots')) {
 
     
@@ -285,7 +285,7 @@ message.channel.send(embed)
 
 });
 client.on("message", message => {
-    var prefix = "sr!";
+    var prefix = "kd-";
  
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
@@ -309,7 +309,7 @@ client.on("message", message => {
  const dot = new Discord.Client();
 client.on('message', message => {
     
-    if (message.content === "sr!emoji") {
+    if (message.content === "kd-emoji") {
         setInterval(function(){
         message.edit('😂') 
         message.edit('🙉')   
@@ -423,7 +423,7 @@ const Sra7a = [
 	 'صراحه  |  ما هي أمنياتك المُستقبلية؟‏',
 ]
    client.on('message', message => {
- if (message.content.startsWith('sr!صراحة')) {
+ if (message.content.startsWith('kd-صراحة')) {
      if(!message.channel.guild) return message.reply('** This command only for servers **');
   var client= new Discord.RichEmbed()
   .setTitle("لعبة صراحة ..")
@@ -495,7 +495,7 @@ const Za7f = [
 
 
  client.on('message', message => {
-   if (message.content.startsWith("sr!عقاب")) {
+   if (message.content.startsWith("kd-عقاب")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -538,7 +538,7 @@ const Za7f = [
 ]
 
  client.on('message', message => {
-   if (message.content.startsWith("sr!كت تويت")) {
+   if (message.content.startsWith("kd-كت تويت")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -566,7 +566,7 @@ const secreT = [
 
 
  client.on('message', message => {
-   if (message.content.startsWith("sr!خواطر")) {
+   if (message.content.startsWith("kd-خواطر")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
   var embed = new Discord.RichEmbed()
   .setColor('RANDOM')
@@ -653,7 +653,7 @@ const zead = [
    '*** انتظر الجزء الثاني عندما يوصل البوت 100 سيرفر , ساعدني في نشر البوت وادخل هذا السيرفر  ***'
 ]
  client.on('message', message => {
- if (message.content.startsWith('sr!مريم')) {
+ if (message.content.startsWith('kd-مريم')) {
   var mariam= new Discord.RichEmbed()
   .setTitle("لعبة مريم ..")
   .setColor('RANDOM')
@@ -666,7 +666,7 @@ const zead = [
 
 
 client.on('message', function(message) {
-  var prefix = 'sr!';
+  var prefix = 'kd-';
     if(message.content.startsWith(prefix + 'قرعه')) {
         let args = message.content.split(" ").slice(1);
         if (!args[0]) {
@@ -709,7 +709,7 @@ const R = [
    '*** روح اكل ملح + ليمون اذا مافيه اكل اي شيء من اختيار الي معك.  ***'
 ]
  client.on('message', message => {
-   var prefix = 'sr!';
+   var prefix = 'kd-';
  if (message.content.startsWith(prefix + 'حكم')) {
   var mariam= new Discord.RichEmbed()
   .setTitle("لعبة حكم ..")
