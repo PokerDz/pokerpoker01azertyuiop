@@ -197,7 +197,7 @@ client.on('message', message => {
     embed : kickembed
   })
 }
-});
+
 var prefix = "-"
 client.on('message', message => {
   if (message.author.x5bz) return;
