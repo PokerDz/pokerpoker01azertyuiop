@@ -27,9 +27,6 @@ client.user.setGame(`Bot By Poker`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
-const Discord = require("discord.js");
-const client = new Discord.Client();
-
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
