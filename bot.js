@@ -284,7 +284,7 @@ message.channel.send(embed)
 
 
 });
-client.on("message",  => {
+client.on("message", message => {
     var prefix = "sr!";
  
             var args = message.content.substring(prefix.length).split(" ");
