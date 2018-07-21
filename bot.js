@@ -109,7 +109,6 @@ Bot By Poker Dz
 ❖  hkm ➾ حكم
 
 `);
-
 client.on('message', message => {
     if(message.content === "-bot") {
         const embed = new Discord.RichEmbed()
@@ -194,8 +193,6 @@ message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
 
 }
 });
-
-
 client.on("message", (message) => {
 if (message.content.startsWith("-cv")) {
             if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
@@ -417,7 +414,6 @@ client.on("guildMemberAdd", member => {
 انت العضو رقم ${member.guild.memberCount} `) 
 }).catch(console.error)
 })
-
 client.on('message', message => {
               if (!message.channel.guild) return;
       if(message.content =='-member')
@@ -646,8 +642,6 @@ const Za7f = [
       "** تروح عند شخص تقول له احبك**.",
   
 ]
-
-
  client.on('message', message => {
    if (message.content.startsWith("-3ikab")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
@@ -690,7 +684,6 @@ const Za7f = [
      '‏كت تويت | مطلبك الوحيد الحين ؟',
      '‏كت تويت | هل حدث وشعرت بأنك ارتكبت أحد الذنوب أثناء الصيام؟',
 ]
-
  client.on('message', message => {
    if (message.content.startsWith("-kt twit")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
@@ -717,8 +710,6 @@ const secreT = [
   "**نحن نكتب ما لا نستطيع ان نقول وما نريد ان يكون**.", 
   "**نحن نكتب ما لا نستطيع ان نقول وما نريد ان يكون**.", 
 ]
-
-
  client.on('message', message => {
    if (message.content.startsWith("-khawatir")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
@@ -817,8 +808,6 @@ const zead = [
    message.react("??")
   }
 });
-
-
 client.on('message', function(message) {
   var prefix = '-';
     if(message.content.startsWith(prefix + '9or3a')) {
