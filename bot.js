@@ -37,7 +37,6 @@ client.on('message', message => {
                message.channel.sendEmbed(embed);
            }
 });
-
 client.on("message", message => {
   if (message.author.bot) return;
   
@@ -121,7 +120,6 @@ if (message.content.startsWith("-cv")) {
     
 }
 });
-
 client.on('message', message => {
               if(!message.channel.guild) return;
     if(message.content.startsWith('-bc')) {
@@ -197,7 +195,6 @@ client.on('message', message => {
     embed : kickembed
   })
 }
-
 var prefix = "-"
 client.on('message', message => {
   if (message.author.x5bz) return;
@@ -718,6 +715,5 @@ const R = [
    message.channel.sendEmbed(mariam);
    message.react(":thinking:")
   }
-}); 
-	 
+}); 	 
 client.login(process.env.BOT_TOKEN);
