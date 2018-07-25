@@ -4,7 +4,7 @@ const prefix = '.'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Bot By Poker`,"http://twitch.tv/S-F")
+client.user.setGame(`Bot By VexYT`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -27,7 +27,6 @@ client.user.setGame(`Bot By Poker`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
-var prefix = "-"
 LOka.on("message", message => {
   if(!message.content.startsWith(prefix)) return;;
   let args = message.content.split(" ").slice(1);
