@@ -4,7 +4,7 @@ const prefix = '.'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Bot By VexYT`,"http://twitch.tv/S-F")
+client.user.setGame(`SR|SYSTEM`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -50,7 +50,7 @@ client.on('message', message => {
   message.channel.sendEmbed(embed);
     }
 });
-           var prefix = "SR!";
+var prefix = "SR!";
 client.on('message', message => {
          if (message.content === prefix + "dt") {
          if (!message.channel.guild) return message.reply('** This command only for servers **');  
