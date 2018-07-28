@@ -208,15 +208,16 @@ client.on('message', message => {
       message.channel.sendEmbed(embed);
     }
 });
-client.on("message", (message) => {
-    if (message.content.startsWith('SR!clear')) {
-        if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
-
-        let args = message.content.split(' ').slice(1);
-        let channel = message.client.channels.find('name', args.join(' '));
-        if (!channel) return message.reply('**There is no room like this name -_-**').catch(console.error);
-        channel.delete()
+client.on('message', message => {
+  if(message.content === ('SR!clear')) {
+  let modRole = message.guild.roles.find("name", "Admin");
+  if (!modRole) return message.reply('You do not have Admin Role'); {
     }
+  const params = message.content.split(" ").slice(1)
+    let messagecount = parseInt(params[0]);
+    message.channel.fetchMessages({limit: messagecount})
+        .then(messages => message.channel.bulkDelete(messages));
+  }
 });
 client.on('message', message => {
   var prefix = "SR!";
