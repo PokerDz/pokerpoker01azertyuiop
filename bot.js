@@ -210,7 +210,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
   if(message.content === ('SR!clear')) {
-  let modRole = message.guild.roles.find("name", "Admin");
+  let modRole = message.guild.roles.find("name", "-「 الادارة」-");
   if (!modRole) return message.reply('You do not have Admin Role'); {
     }
   const params = message.content.split(" ").slice(1)
