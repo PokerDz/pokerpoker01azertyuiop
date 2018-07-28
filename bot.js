@@ -383,8 +383,9 @@ client.on('message', message => {
          
        
 });
-var prefix = "SR!"
 client.on('message', message => {
+var prefix = "SR!";
+	
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
