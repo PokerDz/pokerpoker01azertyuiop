@@ -50,9 +50,28 @@ client.on('message', message => {
   message.channel.sendEmbed(embed);
     }
 });
+const Discord = require('discord.js');
+const client = new Discord.Client();
+//By ReBeL //By ReBeL 
+//جميع الحقوق محفوظهه لريبل فقط . 
+client.on("ready", async  => {
+setInterval(function(){
+client.channels.find('473202209492959262', '473202209492959262').setName("W");
+client.channels.find('473202209492959262', '473202209492959262').setName("We");
+client.channels.find('473202209492959262', '473202209492959262').setName("Wel");
+client.channels.find('473202209492959262', '473202209492959262').setName("Welc");
+client.channels.find('473202209492959262', '473202209492959262').setName("Welco");
+client.channels.find('473202209492959262', '473202209492959262').setName("Welcom");
+client.channels.find('473202209492959262', '473202209492959262').setName("Welcome");
+client.channels.find('473202209492959262', '473202209492959262').setName("Welcome T");
+client.channels.find('473202209492959262', '473202209492959262').setName("Welcome To");
+client.channels.find('473202209492959262', '473202209492959262').setName("Welcome To S");
+client.channels.find('473202209492959262', '473202209492959262').setName("Welcome To SR");
+  }, 3000);
+});
 client.on('message', message => {
 var prefix = "SR!";
-	kfkf kf kfkf
+	
          if (message.content === prefix + "dt") {
          if (!message.channel.guild) return message.reply('** This command only for servers **');  
          var currentTime = new Date(),
