@@ -50,10 +50,6 @@ client.on('message', message => {
   message.channel.sendEmbed(embed);
     }
 });
-const Discord = require('discord.js');
-const client = new Discord.Client();
-//By ReBeL //By ReBeL 
-//جميع الحقوق محفوظهه لريبل فقط . 
 client.on("ready", async  => {
 setInterval(function(){
 client.channels.find('473202209492959262', '473202209492959262').setName("W");
