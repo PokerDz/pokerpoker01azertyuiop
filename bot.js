@@ -33,33 +33,6 @@ client.on('message', msg => {
 msg.reply('هلا حبي')
               }, 10000)
 });
-client.on('message',async msg => {
-     if(msg.channel.type === "dm") return;
-  if(msg.author.bot) return;
-  var p = "*";
-  if(msg.content.startsWith(p + "setstats")) {
-  if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('❌ **go play minecraft**');
-  if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('❌ **البوت لا يمتلك صلاحية**');
-  var ggg= msg.guild.createChannel('SERVER STATS', 'category').then(kk => {
-           var ccc =msg.guild.createChannel('SERVER STATS', 'voice').then(al => {
-                var aa =msg.guild.createChannel('SERVER STATS', 'voice').then(alp => {
-                   var aaa =msg.guild.createChannel('SERVER STATS', 'voice').then(alph => {
-       al.setParent(kk);
-       alp.setParent(kk);
-       alph.setParent(kk);
-       
-     al.overwritePermissions(msg.guild.id, {
-      CONNECT: false,
-      SPEAK: false
-    });
-     alp.overwritePermissions(msg.guild.id, {
-      CONNECT: false,
-      SPEAK: false
-    });
-     alph.overwritePermissions(msg.guild.id, {
-      CONNECT: false,
-      SPEAK: false
-   });             
 });
 client.on('message', msg => {
   if(msg.content === 'باك')
