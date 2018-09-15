@@ -27,7 +27,6 @@ client.user.setGame(`VEX`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
-let prefix = '$',
     prefix2 = '$'
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
