@@ -33,4 +33,10 @@ client.on('message', msg => {
     msg.reply('ممنوع');
   }
 });
+client.on('message', msg => {
+  if(msg.content === 'هلا')
+              setTimeout(function() {  
+msg.reply('هلا حبي')
+              }, 10000)
+});
 client.login(process.env.BOT_TOKEN); 
