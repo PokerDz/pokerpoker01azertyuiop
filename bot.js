@@ -28,12 +28,6 @@ client.user.setGame(`VEX`,"http://twitch.tv/S-F")
   console.log('')
 });
 client.on('message', msg => {
-  if (msg.content === 'discord.gg') {
-   msg.delete(30)
-    msg.reply('ممنوع');
-  }
-});
-client.on('message', msg => {
   if(msg.content === 'هلا')
               setTimeout(function() {  
 msg.reply('هلا حبي')
