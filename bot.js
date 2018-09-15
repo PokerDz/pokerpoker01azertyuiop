@@ -59,37 +59,12 @@ client.on('message',async msg => {
      alph.overwritePermissions(msg.guild.id, {
       CONNECT: false,
       SPEAK: false
-    });
-  setInterval(() => {
-      var currentTime = new Date(),
-hours = currentTime.getHours() + 3 ,
-minutes = currentTime.getMinutes(),
-Seconds = currentTime.getSeconds(),
-Year = currentTime.getFullYear(),
-Month = currentTime.getMonth() + 1,
-Dat = currentTime.getDate()
-if (minutes < 10) {
-minutes = "0" + minutes;
-}
-var suffix = "AM";
-if (hours >= 12) {
-suffix = "PM";
-hours = hours - 12;
-}
-if (hours == 0) {
-hours = 12;
-}
-     al.setName(`Voice Online :[ ${msg.guild.members.filter(m => m.voiceChannel).size} ]`);
-      alp.setName(`Time :[${hours} : ${minutes} : ${Seconds} ${suffix}]`);
-        alph.setName(`[ Date : [${Year} - ${Month} - ${Dat} ]`);
- },1000);
-                   })
-    
-                })
-           })
-  })
-           
-  }
- 
+   });             
+});
+client.on('message', msg => {
+  if(msg.content === 'باك')
+              setTimeout(function() {  
+msg.reply('ولكم منور سرفر')
+              }, 10000)
 });
 client.login(process.env.BOT_TOKEN); 
