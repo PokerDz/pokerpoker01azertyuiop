@@ -34,10 +34,4 @@ msg.reply('هلا حبي')
               }, 10000)
 });
 });
-client.on('message', msg => {
-  if(msg.content === 'باك')
-              setTimeout(function() {  
-msg.reply('ولكم منور سرفر')
-              }, 10000)
-});
 client.login(process.env.BOT_TOKEN); 
