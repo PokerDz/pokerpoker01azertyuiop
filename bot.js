@@ -3225,4 +3225,5 @@ channel.guild.owner.send(`<@!${channelremover.id}>
     .setThumbnail(heg.avatarURL);
     message.channel.send(id)
 }   });
+
 client.login(process.env.BOT_TOKEN); 
