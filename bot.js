@@ -727,7 +727,6 @@ message.react("??")
   
   
   
-var prefix = "sr!"
 client.on('message', message => {
 
   if (message.content.startsWith( prefix + "sug")) {
