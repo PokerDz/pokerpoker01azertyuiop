@@ -2211,9 +2211,7 @@ const prefix = '.'
       msg.channel.send({file : "https://cdn.pg.sa/1c4R2LijPA.png"})
     }
   });
-  
-  ترحيب 2
-  client.on('message', message => {
+   client.on('message', message => {
 const prefix = '.' 
     if(message.content === prefix + 'cc1') {
                          if(!message.channel.guild) return message.channel.send('**This Commnad only For Servers !**');
